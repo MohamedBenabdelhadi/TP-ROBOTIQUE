@@ -5,33 +5,15 @@ Tp Robotique avec Nouhaila Faris
 
 
 
- git clone git@github.com:MohamedBenabdelhadi/TP-ROBOTIQUE.git                                           INT ✘ 
-Cloning into 'TP-ROBOTIQUE'...
-git@github.com: Permission denied (publickey).
-fatal: Could not read from remote repository.
+ void TIM2_IRQHandler(void) {
+    // Vérification du flag d'interruption du timer
+    if (__HAL_TIM_GET_FLAG(&htim2, TIM_FLAG_UPDATE) != RESET) {
+        if (__HAL_TIM_GET_IT_SOURCE(&htim2, TIM_IT_UPDATE) != RESET) {
+            __HAL_TIM_CLEAR_IT(&htim2, TIM_IT_UPDATE);
+            // Changer l'état de la LED
+            HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5); // Par exemple pour la LED sur PA5
+        }
+    }
+}
 
-Please make sure you have the correct access rights
-and the repository exists.
-
-
-
-ese@D060-PC6
-SHA256:3I0nSYaUm+gtEuYJqYoh/66HmlQ6orLiPA9XaJ6uPho 
-
-
-
-
-
-
-
-
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
-
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-
-cat ~/.ssh/id_rsa.pub
-
-ssh -T git@github.com
 
