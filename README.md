@@ -17,3 +17,9 @@ Tp Robotique avec Nouhaila Faris
 }
 
 
+GPIO_InitTypeDef GPIO_InitStruct = {0};
+GPIO_InitStruct.Pin = GPIO_PIN_13;  // Par exemple, si le bouton est sur PA13
+GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;  // Interruption sur front descendant
+GPIO_InitStruct.Pull = GPIO_NOPULL;
+HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
