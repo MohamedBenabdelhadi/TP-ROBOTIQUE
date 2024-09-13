@@ -23,3 +23,6 @@ GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;  // Interruption sur front descenda
 GPIO_InitStruct.Pull = GPIO_NOPULL;
 HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+HAL_UART_Receive(&huart2, (uint8_t *)&received_char, 1, HAL_MAX_DELAY);
+        HAL_UART_Transmit(&huart2, (uint8_t *)&received_char, 1, HAL_MAX_DELAY);
+
