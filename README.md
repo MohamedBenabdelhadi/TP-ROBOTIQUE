@@ -26,3 +26,11 @@ HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 HAL_UART_Receive(&huart2, (uint8_t *)&received_char, 1, HAL_MAX_DELAY);
         HAL_UART_Transmit(&huart2, (uint8_t *)&received_char, 1, HAL_MAX_DELAY);
 
+
+
+        int __io_putchar(int chr)
+{
+	HAL_UART_Transmit(&huart2, (uint8_t*) &chr, 1, HAL_MAX_DELAY);
+	return chr;
+}
+
