@@ -1,10 +1,10 @@
 # TP-ROBOTIQUE
-Tp Robotique avec Nouhaila Faris
+# # Tp Robotique avec Nouhaila Faris
 
 
 
 
-
+```c
  void TIM2_IRQHandler(void) {
     // Vérification du flag d'interruption du timer
     if (__HAL_TIM_GET_FLAG(&htim2, TIM_FLAG_UPDATE) != RESET) {
